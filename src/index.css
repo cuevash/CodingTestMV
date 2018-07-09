@@ -1,5 +1,68 @@
-body {
+/*
+  RESET STYLES:
+  
+  Minimalist approach see: https://jgthms.com/minireset.css/
+
+*/
+
+/* IMPORTING this file from 
+ @import url('minireset.css/minireset.css'); */
+
+ html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  box-sizing: 'border-box';
+  overflow-x: 'hidden';
+  overflow-y: 'auto';
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  No rounded input by default in ios.. : see https://stackoverflow.com/questions/2918707/turn-off-iphone-safari-input-element-rounding
+*/
+
+input, textarea {
+  border-radius: 0;
+  -webkit-border-radius:0px;
+}
+
+/* This was preventing the chekboxes to show... */
+/* input {
+  -webkit-appearance: none;
+} */
+
+/*
+  Transparent color for some ios
+*/
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+  BASIC FONT SIZES & STYLES
+*/
+a, a:visited, a:link, a:any-link{
+  text-decoration: none;
+}
+
+/*
+  BASIC FONT SIZES & STYLES
+*/
+
+p {
+  margin: 0em 0px;
+}
+
