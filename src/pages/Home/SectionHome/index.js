@@ -1,37 +1,22 @@
 // REACT
 import React, { Component } from 'react'
-
-// STYLES 
-import { withTheme } from 'emotion-theming';
-
-// LIBS
-
-
-// COMPONENTS
-
-// DATA
-
-
 import { withRouter } from 'react-router-dom'
 
-class SectionHome extends Component {
+// STYLES
+import { withTheme } from "emotion-theming";
+import styled, { css } from "react-emotion";
+import * as Ps from "ProjStyles/";
+import * as Bs from "styles/base";
+import * as CssUtils from "ProjStyles/cssUtils";
+import * as chroma from "chroma-js";
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data: null
-    }
-  }
-
-  componentWillMount() {
-
-  }
-
-  render() {
-
-    return ""
-  }
+const SectionHome = (props) => {
+  return (
+    <Bs.Text>
+      Section Home
+      </Bs.Text>
+  )
 }
 
-export default withTheme( withRouter( SectionHome ) )
+
+export default withTheme( SectionHome )

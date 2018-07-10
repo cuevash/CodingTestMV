@@ -9,19 +9,15 @@ import * as Bs from 'styles/base';
 import * as Rb from 'rebass';
 import * as CssUtils from 'ProjStyles/cssUtils';
 
-// LIBS
-import * as R from 'ramda'
-import _ from 'lodash'
-import { withProps } from 'recompose';
-import getAssetSrc from 'util/getAssetSrc'
 
 const Footer = (props) => {
-  const { className, menuDat, menuIdx, visible = true, theme, ...rProps } = props
 
   return (
-    <Bs.Flex>
-      FOOTER
+    <footer>
+      <Bs.Flex>
+        FOOTER
     </Bs.Flex>
+    </footer>
   )
 }
 

@@ -11,11 +11,12 @@ import * as chroma from "chroma-js";
 
 // ALL
 import Footer from "sections/Footer"
-import Top from "sections/Footer"
+import Top from "sections/Top"
 
 const PageStd = ({ children, ...rProps }) => {
   return (
-    <Bs.Box>
+    <Bs.Box
+      w={1} >
       <Top />
       {children}
       <Footer />

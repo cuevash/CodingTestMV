@@ -22,6 +22,22 @@ const PageBase = styled(Bs.Box)(
 
 const TextAsH2 = Bs.Text.withComponent('h2')
 
+export const TextAsH1 = Bs.Text.withComponent('h1')
+
+export const Title1 = withTheme( ({ theme, className, ...props }) => {
+  return (
+    <TextAsH1
+      className={className}
+      fontFamily={theme.altMainFont}
+      fontSize={['huge','huge','huge','huge','huge','hugePlus']}
+      lineHeight='0.92em'
+      pt='0.24em'
+      // my={CssUtils.calcVertGblPxToRem(58)}
+      {...props} />
+  )
+} )
+
+
 const Title2 = withTheme( ({ theme, className, ...props }) => {
   return (
     <TextAsH2
