@@ -15,12 +15,14 @@ import Top from "sections/Top"
 
 const PageStd = ({ children, ...rProps }) => {
   return (
-    <Bs.Box
-      w={1} >
+    <Bs.Flex
+      flexDirection='column'
+      w={1} 
+      minHeight='100vh'>
       <Top />
       {children}
       <Footer />
-    </Bs.Box>
+    </Bs.Flex>
   )
 }
 

@@ -26,17 +26,12 @@ const Home = ({ theme, ...props }) => {
       </Helmet>  
 
       {/* Space - Top */}
-      <Bs.Box
-        f='medium'
-        flex='40 1 auto' />       
-
+      <Bs.Box f='medium' py='1em'/>       
 
       <SectionHome/>
 
       {/* Space - Bottom */}
-      <Bs.Box
-        f='medium'
-        flex='40 1 auto' />  
+      <Bs.Box f='medium' flex='1 1 auto' />  
 
     </PageStd>
   )
