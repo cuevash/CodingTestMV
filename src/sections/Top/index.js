@@ -20,12 +20,21 @@ const Top = ({theme, ...rProps}) => {
         px={['0.85em', '1.5em', '2.6em', '2.6em', '2.6em', '2.6em']} 
         py='2em' >
 
-        <Ps.TextAsH1
-          f='big'
-          fontWeight='bold'
-          color={theme.colors.orangeDark1}>
-          Acme Company
-        </Ps.TextAsH1>
+        {/* Company Name */}
+        <Bs.Box
+          f={['medium', 'big']}   
+          fontWeight='bold'>
+          <Bs.Text
+            display='inline'
+            color={theme.colors.orangeDark1}>
+            Acme
+        </Bs.Text>
+          <Bs.Text
+            display='inline'
+            color={theme.colors.white}>
+            {' '}Company
+        </Bs.Text>
+        </Bs.Box>
 
       </Bs.Flex>
     </header>

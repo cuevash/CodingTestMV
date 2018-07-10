@@ -163,6 +163,7 @@ export const Text = styled('div')(
   {
     margin: 0
   },
+  display,
   space,
   fontSize,
   color,

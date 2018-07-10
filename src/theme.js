@@ -145,6 +145,7 @@ let theme = {
   
   colors: {
     black: '#000',
+    white: '#FFF',
     greyDark: 'rgb(56, 67, 72)',
     orangeDark1: 'rgb(217, 52, 45)',
     orangeDark2: 'rgb(219, 56, 44)',
