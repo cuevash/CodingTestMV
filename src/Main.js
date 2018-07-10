@@ -10,14 +10,14 @@ import * as Bs from 'styles/base';
 // import Carousel from 'pages/Carousel'
 // import CarouselTest from 'pages/CarouselTest'
 // import DemographicData from 'pages/DemographicData'
-import CarType from 'pages/CarType'
-import CarRole from 'pages/CarRole'
-import InformationSrc from 'pages/InformationSrc'
-import HomeInit from 'pages/HomeInit'
+// import CarType from 'pages/CarType'
+// import CarRole from 'pages/CarRole'
+// import InformationSrc from 'pages/InformationSrc'
+import Home from 'pages/Home'
 
 //import DemographicDataNew from 'pages/DemographicDataNew'
 
-import * as webApp from 'rdx/webApp'
+// import * as webApp from 'rdx/webApp'
 
 
 const Main = (props) => {
@@ -30,7 +30,7 @@ const Main = (props) => {
       {/* Routes */}
 
         <Switch>
-          <Route exact path="/" component={} />
+          <Route exact path="/" component={Home} />
         </Switch>
     </Bs.Flex>
   )

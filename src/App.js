@@ -15,7 +15,7 @@ import { theme } from './theme'
 
 // REDUX  
 // import { actionIds, actions, rootEpic, rootReducer } from 'rdx'
-import configureStore from 'rdx/configureStore'
+// import configureStore from 'rdx/configureStore'
 import { Provider } from 'react-redux'
 // import { applyMiddleware, compose, createStore } from 'redux'
 // import { createEpicMiddleware } from 'redux-observable';
@@ -67,7 +67,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 
 // Store Initialization
-const store = configureStore()       
+// const store = configureStore()       
 
 class App extends React.Component {
 
@@ -80,9 +80,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider store={store}>
         <BrowserRouter>
-
           <ThemeProvider theme={theme}>
             <ProviderRb theme={theme}>
               <ScrollToTop>
@@ -90,9 +88,7 @@ class App extends React.Component {
               </ScrollToTop>
             </ProviderRb>
           </ThemeProvider>
-
         </BrowserRouter>
-      </Provider>
     )
   }
 }

@@ -1,11 +1,5 @@
-// REDUX
-import { actions, rootEpic, rootReducer, flags, surveyData } from 'rdx'
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-
-import { createEpicMiddleware } from 'redux-observable';
-
+// LIBS
 import * as R from "ramda";
-import _ from "lodash";
 
 // DBs
 

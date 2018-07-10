@@ -9,10 +9,7 @@ import { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
 // Styles
-import { withTheme } from 'glamorous'
-import * as glamor from 'glamor'
-import { createElement } from 'glamor/react'
-/* @jsx createElement */
+import { withTheme } from 'emotion-theming';
 
 
 class ScrollToTop extends Component {

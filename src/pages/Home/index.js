@@ -11,28 +11,12 @@ import * as CssUtils from 'ProjStyles/cssUtils';
 //import posed from 'react-pose'
 
 // COMPONENTS
-import { dbWeb } from 'db/dbSchibsted'
-// import SectionHome from 'pages/Home/SectionHome'
-// import SectionGrafDemography from 'pages/Home/SectionGrafDemography'
-// import SectionCarRole from 'pages/Home/SectionCarRole'
-// import SectionCarType from 'pages/Home/SectionCarType'
-// import SectionMotorType from 'pages/Home/SectionMotorType'
-// import SectionPlacesBought from 'pages/Home/SectionPlacesBought'
-// import SectionBuyingProcess from 'pages/Home/SectionBuyingProcess'
 
-import SectionHeader from 'sections/SectionHeader'
-import SectionTitleSubtitle from 'sections/SectionTitleSubtitle'
-import SectionLoaderCircle from 'sections/SectionLoaderCircle'
-import SectionImage from 'sections/SectionImage'
-import LoadingBar from 'react-redux-loading-bar'
-import CookieLinks from 'components/CookieLinks'
+import SectionHome from './SectionHome'
 
 import {Helmet} from "react-helmet";
 
 const Home = ({ theme, ...props }) => {
-
-  // tslint:disable:no-console
-  console.log(" PXXX ", CssUtils.calcGblPxToRem([56, 56, 56, 56, 56, 56]))
 
   return (
     <Ps.PageN
@@ -45,18 +29,20 @@ const Home = ({ theme, ...props }) => {
      >
 
       <Helmet>
-        <title>Schibsted</title>
+        <title>Phones's List</title>
       </Helmet>
 
       {/* Section Header */}
       <Ps.PageSection>
 
         {/* Header */}
-        <SectionHeader sectionDat={sectionData.header01} />
+        {/* <SectionHeader sectionDat={sectionData.header01} /> */}
+
+        HEADER
 
       </Ps.PageSection>    
 
-      {/* Space */}
+      {/* Space - Ratio */}
       <Bs.Box
         f='medium'
         flex='40 1 auto' />       
@@ -64,7 +50,7 @@ const Home = ({ theme, ...props }) => {
       {/* Section Title - Subtitle */}
       <Ps.PageSection >
 
-        <SectionTitleSubtitle sectionDat={sectionData.TitleSubtitle01} />
+        {/* <SectionTitleSubtitle sectionDat={sectionData.TitleSubtitle01} /> */}
 
       </Ps.PageSection> 
 
@@ -77,42 +63,17 @@ const Home = ({ theme, ...props }) => {
         minHeight={['0.5em']}
         />
 
-      {/* Section Circle */}
-      <Ps.SectionStdPx>
-        {(pxInt) => 
-          <SectionLoaderCircle
-          linkTo='/perfil-sociodemografico'
-          sectionDat={sectionData.LoaderCircle01} pxInt={pxInt} />
-        }
-      </Ps.SectionStdPx>
-
-      {/* Space */}
-      <Bs.Box
-        f='medium'
-        flex='35 1 1em' />  
-
-      <Ps.PageSection>
-
-        <SectionImage
-          sectionDat={sectionData.Image01} height={CssUtils.calcVertGblPxToRem(35)} />
-
-        {/* <Bs.Box height={`${459 + 140 + 12}`} bg='yellow'
-        mx={[`-${theme.page.stdPx}`]}>
-      </Bs.Box>     */}
-      </Ps.PageSection>
-
-      <CookieLinks />
 
     </Ps.PageN >
   )
 }
 
 // Data for sections
-const sectionData = {
+{/* const sectionData = {
   header01: dbWeb.sections.findOne({ id: 'header01' }),
   TitleSubtitle01: dbWeb.sections.findOne({ id: 'TitleSubtitle01' }),
   LoaderCircle01: dbWeb.sections.findOne({ id: 'LoaderCircle01' }),
   Image01: dbWeb.sections.findOne({ id: 'Image01' })
-}
+} */}
 
 export default  withRouter( withTheme( Home ) )

@@ -3,9 +3,6 @@
 
 import { combineReducers } from 'redux'
 import { combineEpics } from 'redux-observable';
-// import { ajax } from 'rxjs/observable/dom/ajax';
-// import { mergeMap } from 'rxjs/operators';
-// import Papa from 'papaparse'
 import promiseFromPapaParse from 'util/promiseFromPapaParse'
 
 import Rx from "rxjs/Rx";
@@ -88,11 +85,9 @@ const surveyData = ( state = {}, action) => {
 };
 
 
-
-
 const rootReducer = combineReducers({
   flags,
-  surveyData
+ // surveyData
 })
 
 const rootEpic = combineEpics(
