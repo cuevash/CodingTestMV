@@ -1,39 +1,6 @@
 import { injectGlobal } from 'emotion'
 
-import { theme } from './theme'
-import * as R from 'ramda'
-
-const getFluidCalc = (minSize, maxSize, minViewPortWidth, maxViewPortWidth) => {
-
-  return `
-        font-size: calc(${minSize}px + ${(maxSize - minSize)} * ((100vw - ${minViewPortWidth}px) / ${(maxViewPortWidth - minViewPortWidth)} ));
-        font-size: -webkit-calc(${minSize}px + ${(maxSize - minSize)} * ((100vw - ${minViewPortWidth}px) / ${(maxViewPortWidth - minViewPortWidth)} ));
-        `
-}
-
-// Generate media queries for the breakpoints in theme and following the equation
-// calc({factor} * vw + {baseSize}px );
-
-// const generateMediaQueries = (factor, baseSize) => {
-//   let css = theme.breakpoints.map( breakPoint => {
-//     let breakPointNum = R.replace('em', '', breakPoint)
-
-//     let begin = (factor/100) * (breakPointNum*16) + baseSize
-//     let end = (factor/100) * (breakPointNum*16) + baseSize
-
-//     return `
-
-//   /* Medium devices  */
-//   @media only screen and (min-width: ${breakPoint}) {
-//     :root {
-//       ${getFluidCalc(18.91, 20.77, 576, 768)}
-//     }
-//   } 
-//     `
-//   })
-// }
-
-let b = injectGlobal`
+injectGlobal`
   * {
     box-sizing: border-box;
   }
@@ -49,7 +16,6 @@ let b = injectGlobal`
       /* Where: * 1.0417 = 100 * font_Size_Difference / viewport_Width_Difference */
     }
   }
-
 
   /* 1.125em(18px) @ 48em(768px) increasing to 1.25em(20px) @ 64em(1024px) */
 @media (min-width: 48em) {
