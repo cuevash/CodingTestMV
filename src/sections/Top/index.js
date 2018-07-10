@@ -17,11 +17,14 @@ const Top = ({theme, ...rProps}) => {
         w={1}
         bg={theme.colors.greyDark}
         f='medium'
-        px={['0.85em', '1.5em', '2.6em', '2.6em', '2.6em', '2.6em']} >
+        px={['0.85em', '1.5em', '2.6em', '2.6em', '2.6em', '2.6em']} 
+        py='2em' >
 
         <Ps.TextAsH1
+          f='big'
+          fontWeight='bold'
           color={theme.colors.orangeDark1}>
-          TOP
+          Acme Company
         </Ps.TextAsH1>
 
       </Bs.Flex>
