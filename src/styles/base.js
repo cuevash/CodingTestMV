@@ -62,7 +62,7 @@ const maxHeight = responsiveStyle({
   //key: 'radii'
 })
 
-const Box = styled('div')(
+export const Box = styled('div')(
   space,
   width,
   fontSize,
@@ -307,4 +307,4 @@ const Line = styled(Box)(
   AllResponsive
 )
 
-export { Line, Box, Flex, Button, Label }
+export { Line, Flex, Button, Label }

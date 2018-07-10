@@ -10,11 +10,17 @@ import * as Bs from "styles/base";
 import * as CssUtils from "ProjStyles/cssUtils";
 import * as chroma from "chroma-js";
 
+// COMPONENTS
+import PhoneListContainer from 'components/PhoneListContainer'
+
+// ALL
+import phoneDat from 'mock/phoneDat'
+
 const SectionHome = (props) => {
   return (
-    <Bs.Text>
-      Section Home
-      </Bs.Text>
+    <Bs.Box>
+      <PhoneListContainer phoneList={phoneDat}/>
+    </Bs.Box>
   )
 }
 
