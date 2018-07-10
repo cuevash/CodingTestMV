@@ -4,9 +4,14 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // STYLES 
+import { withTheme } from 'emotion-theming';
+import styled, { css } from 'react-emotion'
+import * as Ps from 'ProjStyles/'
+import * as Bs from 'styles/base';
+import * as Rb from 'rebass';
+import * as CssUtils from 'ProjStyles/cssUtils';
 
 // COMPONENTS
-import * as Bs from 'styles/base';
 // import Carousel from 'pages/Carousel'
 // import CarouselTest from 'pages/CarouselTest'
 // import DemographicData from 'pages/DemographicData'
@@ -20,13 +25,15 @@ import Home from 'pages/Home'
 // import * as webApp from 'rdx/webApp'
 
 
-const Main = (props) => {
+const Main = ({theme, ...rProps}) => {
 
   // tslint:disable:no-console
-  console.log("MAINNNNN", props)
+  console.log("MAINNNNN", rProps)
 
   return (
-    <Bs.Flex>
+    <Bs.Flex
+      fontFamily={theme.font}>
+
       {/* Routes */}
 
         <Switch>
@@ -48,4 +55,4 @@ const Main = (props) => {
 
 //export default  withRouter( MainRdxContd )
 
-export default Main
+export default  withTheme( Main )

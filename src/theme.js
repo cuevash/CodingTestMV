@@ -69,8 +69,7 @@ let theme = {
     fontWeight: '400'
   },  
 
-
-  font: "'SmgFlama', serif",
+  font: "'Merriweather Sans', sans-serif",
   altFont: "'Prelo Slab', serif",  
   altMainFont: "'SmgFlama Cond', serif", 
 

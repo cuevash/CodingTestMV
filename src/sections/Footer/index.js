@@ -19,13 +19,13 @@ const Footer = ({theme, ...rProps}) => {
         justifyContent='center'
         bg={theme.colors.orangeDark2}
         f='medium'
-        px={['0.85em', '1.5em', '2.6em', '2.6em', '2.6em', '2.6em']} 
+        px={['0.85em', '1.5em', '2.6em']} 
         py='2em' >
 
         {/* Copyright */}
         <Bs.Box
           f={['small', 'medium']}
-          fontWeight='bold'>
+          fontWeight='100'>
           <Bs.Text
             display='inline'
             color={theme.colors.white}>
