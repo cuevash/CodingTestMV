@@ -15,8 +15,9 @@ import { theme } from './theme'
 
 // REDUX  
 // import { actionIds, actions, rootEpic, rootReducer } from 'rdx'
-// import configureStore from 'rdx/configureStore'
+import configureStore from 'rdx/configureStore'
 import { Provider } from 'react-redux'
+import { phoneListFetch } from 'rdx/phoneList'
 // import { applyMiddleware, compose, createStore } from 'redux'
 // import { createEpicMiddleware } from 'redux-observable';
 
@@ -67,7 +68,17 @@ import ScrollToTop from './components/ScrollToTop'
 
 
 // Store Initialization
-// const store = configureStore()       
+const store = configureStore()   
+
+// Start fetching list
+let aaa = phoneListFetch()
+console.log("jjjjjjj", aaa)
+
+store.dispatch( aaa )
+
+// Log the initial state
+console.log("STORE INITIAL: ", store.getState())
+
 
 class App extends React.Component {
 

@@ -1,7 +1,12 @@
 import { combineReducers } from 'redux'
 import { combineEpics } from 'redux-observable';
 
-import Rx from "rxjs/Rx";
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
+import { ajax } from 'rxjs/observable/dom/ajax';
 
 
 // import { Observable } from 'rxjs';
@@ -31,13 +36,15 @@ const Actions = ActionsNames.reduce(
   {} 
 )
 
-const phoneListFetch = () => ({
-   type: Actions.PHONE_LIST_FETCH, 
+console.log("namesss", Actions)
+
+export const phoneListFetch = () => ({
+   type: Actions.FETCH, 
    payload: '' 
   });
 
-const phoneListFetched = (resp) => ({
-   type: Actions.PHONE_LIST_FETCHED,
+export const phoneListFetched = (resp) => ({
+   type: Actions.FETCHED,
    payload: resp 
   });
 
@@ -51,13 +58,13 @@ const Status = {
 
 export const phoneList = ( state = {}, action ) => {
   switch (action.type) {
-    case Actions.PHONE_LIST_FETCH:
+    case Actions.FETCH:
       return {
         status: Status.LOADING,
         errorTxt: null,
         dat: null
       }
-    case Actions.SURVEY_DATA_FETCHED:
+    case Actions.FETCHED:
       return Object.assign({}, state, 
         { 
           status: action.status,
@@ -71,20 +78,22 @@ export const phoneList = ( state = {}, action ) => {
 
 // Epics
 
-const apiPoint = process.env.REACT_APP_SECRET_CODE + '/phones'
+const apiPoint = process.env.REACT_APP_PHONE_API + '/phones'
 
 export const phoneListFetchingEpic = action$ => {
   // action$.ofType is the outer Observable
   return action$
-    .ofType(Actions.PHONE_LIST_FETCH)
+    .ofType(Actions.FETCH)
     .switchMap(() => {
-      return Rx.Observable.ajax
+      return ajax
         .getJSON(apiPoint)
-        .map(data => data.results)
+        .map(data => {
+          return data.results
+        })
         .map(phones => phones.map(phone => ({
           id: phone.id,
           title: phone.title,
-          imageUrl: whisky.img_url
+          imageUrl: phone.img_url
         })))
     })
     .map(phones => phoneListFetched({
@@ -92,13 +101,18 @@ export const phoneListFetchingEpic = action$ => {
       errorTxt: null,
       dat: phones
     }))
-    .catch(error => Rx.of(
+    .catch(error => Observable.of(
       phoneListFetched({
         status: Status.ERROR,
         errorTxt: error.message,
         dat: null
       })
     ))
+}
+
+export const phoneListFetchingEpic3 = action$ => {
+  // action$.ofType is the outer Observable
+  return action$
 }
 
 

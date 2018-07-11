@@ -73,7 +73,7 @@ const SimpleMediaCard = (props) => {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={dat.url}
+          image={dat.imageUrl}
           title={dat.title}
         />
         <CardContent>
