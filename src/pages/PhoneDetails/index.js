@@ -73,6 +73,7 @@ const PhoneDetails = ({ theme, phoneListDat, ...props }) => {
   )
 }
 
+
 const mapStateToProps = (state) => ({
   phoneListDat: state.phoneList
 })
