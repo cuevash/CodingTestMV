@@ -13,11 +13,15 @@ import * as CssUtils from 'ProjStyles/cssUtils';
 import { withStyles } from '@material-ui/core/styles'
 
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 
 class PhoneDetailComponent extends Component {
@@ -28,19 +32,23 @@ class PhoneDetailComponent extends Component {
   render() {
     const { phoneList, theme, ...rProps } = this.props
 
-    return <Bs.Box f="medium" px={["5%", "10%"]}>
+    return <Bs.Box f="medium" px={["5%", "5%", "5%", "5%"]}>
       {/* Phones */}
       <Bs.Flex 
         flexWrap='wrap'
         justify="center" >
 
         {phoneList.map(phone => (
-          <Bs.Box
+          <Bs.Flex
+            justify="center" 
             f='medium'
-            my='0.5em'
-            mx='0.5em'
+            py='0.5em'
+            px='0.5em'
+            w={[1, 1/2, 1/3, 1/4]}
             position>
-            <Bs.LinkReactR to={`/phone/${phone.id}`}>
+            <Bs.LinkReactR to={`/phone/${phone.id}`}
+              w={1}
+              height='100%'>
               <SimpleMediaCardStyled dat={phone} />
             </Bs.LinkReactR>
 
@@ -52,7 +60,7 @@ class PhoneDetailComponent extends Component {
                 }
               }}
             /> */}
-          </Bs.Box>
+          </Bs.Flex>
         ))}
 
       </Bs.Flex>
@@ -64,7 +72,7 @@ class PhoneDetailComponent extends Component {
 
 const styles = {
   card: {
-    maxWidth: 250,
+    // maxWidth: 250,
   },
   media: {
     height: 0,
@@ -77,19 +85,18 @@ const SimpleMediaCard = (props) => {
   return (
     <div>
       <Card className={classes.card}>
+        <CardContent>
+          <Typography gutterBottom variant="title" noWrap>
+            {dat.title}
+          </Typography>
+        </CardContent>
+
         <CardMedia
           className={classes.media}
           image={dat.url}
           title={dat.title}
         />
-        <CardContent>
-          <Typography gutterBottom variant="headline" component='h2'>
-            {dat.title}
-          </Typography>
-          <Typography component='p'>
-           {dat.description}
-          </Typography>
-        </CardContent>
+
         <CardActions>
           <Button size="small" color="primary" >
             Details
