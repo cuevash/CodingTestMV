@@ -32,17 +32,25 @@ class PhoneDetailComponent extends Component {
     const { phoneDat, theme, ...rProps } = this.props
 
     return (
-      <Bs.Box f="medium" px={["5%", "10%"]}>
-        {/* Phone */}
+    <Bs.Box f="medium" px={["5%", "5%", "5%", "5%"]}>
+      {/* Phone */}
+      <Bs.Flex 
+        flexWrap='wrap'
+        justify="center" >
 
-        <Bs.Box
-          f='medium'
-          py='0.5em'
-          px='0.5em'>
+          <Bs.Flex
+            justify="center" 
+            f='medium'
+            py='0.5em'
+            px='0.5em'
+            w={[1, 1/2, 1/3, 1/4]}
+            position>
             <SimpleMediaCardStyled dat={phoneDat} />
-        </Bs.Box>
+          </Bs.Flex>
 
-      </Bs.Box>
+      </Bs.Flex>
+
+    </Bs.Box>
     )
   }
 }
@@ -76,11 +84,6 @@ const SimpleMediaCard = (props) => {
            {dat.description}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small" color="primary" >
-            Details
-          </Button>
-        </CardActions>
       </Card>
     </div>
   );
