@@ -84,18 +84,7 @@ export const phoneListFetchingEpic = action$ => {
   // action$.ofType is the outer Observable
   return action$
     .ofType(Actions.FETCH)
-    .switchMap(() => {
-      return ajax
-        .getJSON(apiPoint)
-        .map(data => {
-          return data.results
-        })
-        .map(phones => phones.map(phone => ({
-          id: phone.id,
-          title: phone.title,
-          imageUrl: phone.img_url
-        })))
-    })
+    .switchMap(() => ajax.getJSON(apiPoint) )
     .map(phones => phoneListFetched({
       status: Status.LOADED,
       errorTxt: null,
