@@ -65,12 +65,11 @@ export const phoneList = ( state = {}, action ) => {
         dat: null
       }
     case Actions.FETCHED:
-      return Object.assign({}, state, 
-        { 
-          status: action.status,
-          errorTxt: action.errorTxt,
-          dat: action.dat
-        })
+      return { 
+          status: action.payload.status,
+          errorTxt: action.payload.errorTxt,
+          dat: action.payload.dat
+        }
     default:
       return state;
   }
