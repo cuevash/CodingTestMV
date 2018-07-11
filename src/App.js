@@ -91,6 +91,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <Provider store={store}>
         <BrowserRouter>
           <ThemeProvider theme={theme}>
             <ProviderRb theme={theme}>
@@ -100,6 +101,7 @@ class App extends React.Component {
             </ProviderRb>
           </ThemeProvider>
         </BrowserRouter>
+        </Provider>
     )
   }
 }

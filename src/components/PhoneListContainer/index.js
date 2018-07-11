@@ -1,5 +1,6 @@
 // REACT
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // STYLES 
@@ -24,13 +25,15 @@ import Typography from '@material-ui/core/Typography';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 
-class PhoneDetailComponent extends Component {
+class PhoneListContainer extends Component {
 
   componentDidUpdate(prevProps) {
   }
 
   render() {
-    const { phoneList, theme, ...rProps } = this.props
+    const { phoneListDat, phoneList, theme, ...rProps } = this.props
+
+    console.log("PhoneListlll", phoneListDat)
 
     return <Bs.Box f="medium" px={["5%", "5%", "5%", "5%"]}>
       {/* Phones */}
@@ -135,5 +138,20 @@ const Details = (props) => (
 
 const SimpleMediaCardStyled =  withStyles(styles)(SimpleMediaCard);
 
+const mapStateToProps = (state) => {
+  
+  console.log("satatetete", state )
 
-export default  withTheme( PhoneDetailComponent )
+  return {
+    phoneListDat: state.phoneList
+}
+
+}
+
+
+const PhoneListContainerRdxContd = connect(
+  mapStateToProps
+)(PhoneListContainer);
+
+
+export default  withTheme( PhoneListContainerRdxContd )

@@ -56,7 +56,13 @@ const Status = {
   ERROR: 'error'
 }
 
-export const phoneList = ( state = {}, action ) => {
+const initState =  {
+  status: null,
+  errorTxt: null,
+  dat: null
+}
+
+export const phoneList = ( state = initState, action ) => {
   switch (action.type) {
     case Actions.FETCH:
       return {

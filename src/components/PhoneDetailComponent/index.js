@@ -1,5 +1,6 @@
 // REACT
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
@@ -29,7 +30,9 @@ class PhoneDetailComponent extends Component {
   }
 
   render() {
-    const { phoneDat, theme, ...rProps } = this.props
+    const { phoneList, phoneDat, theme, ...rProps } = this.props
+
+    console.log("PhoneListlll", phoneList)
 
     return (
     <Bs.Box f="medium" px={["5%", "5%", "5%", "5%"]}>
@@ -118,4 +121,11 @@ const Details = (props) => (
 const SimpleMediaCardStyled =  withStyles(styles)(SimpleMediaCard);
 
 
-export default  withTheme( PhoneDetailComponent )
+const mapStateToProps = state => ({ ...state });
+
+const PhoneDetailComponentRdxContd = connect(
+  mapStateToProps
+)(PhoneDetailComponent);
+
+
+export default  withTheme( PhoneDetailComponentRdxContd )

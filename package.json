@@ -103,6 +103,9 @@
     ]
   },
   "babel": {
+    "plugins": [
+      "emotion"
+    ],
     "presets": [
       "react-app"
     ]
