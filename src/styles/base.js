@@ -3,7 +3,7 @@ import { Link as Lnk } from "react-router-dom"
 import { alignItems, alignSelf, backgroundImage, backgroundPosition, 
     backgroundRepeat, backgroundSize , borderColor,borderWidth, 
     borderTop, borderBottom ,borderLeft, color, display, flex, 
-    flexDirection, fontFamily, fontSize, fontWeight, fWrap, height
+    flexDirection, fontFamily, fontSize, fontWeight, fWrap, flexWrap, height
   , justifyContent, lineHeight, order, ratio, space, textAlign , width, responsiveStyle } from 'styled-system';
 
   import { withProps } from 'recompose';
@@ -78,6 +78,7 @@ export const Box = styled('div')(
   display,
   fontFamily,
   flex,
+  flexWrap,
   top,
   right,
   maxWidth,
@@ -140,6 +141,7 @@ const Flex = styled('div')(
   alignSelf,
   fWrap,
   flex,
+  flexWrap,
   flexDirection,
   borderColor,
   borderWidth,

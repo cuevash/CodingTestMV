@@ -30,7 +30,7 @@ const Home = ({ theme, ...props }) => {
       <SectionHome/>
 
       {/* Space - Bottom */}
-      <Bs.Box f='medium' flex='1 1 auto' />  
+      <Bs.Box f='medium' flex='1 1 2em' />  
 
     </PageStd>
   )
