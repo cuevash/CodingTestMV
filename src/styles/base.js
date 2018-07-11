@@ -3,6 +3,7 @@ import { Link as Lnk } from "react-router-dom"
 import { alignItems, alignSelf, backgroundImage, backgroundPosition, 
     backgroundRepeat, backgroundSize , borderColor,borderWidth, 
     borderTop, borderBottom ,borderLeft, color, display, flex, 
+    position,
     flexDirection, fontFamily, fontSize, fontWeight, fWrap, flexWrap, height
   , justifyContent, lineHeight, order, ratio, space, textAlign , width, responsiveStyle } from 'styled-system';
 
@@ -63,6 +64,7 @@ const maxHeight = responsiveStyle({
 })
 
 export const Box = styled('div')(
+  position,
   space,
   width,
   fontSize,
@@ -93,6 +95,18 @@ export const Box = styled('div')(
     position: 'relative',
   }
 )
+
+export const BoxAbs = styled(Box)(
+  {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0
+  }
+)
+
+
 
 export const Table = styled('table')(
   {
@@ -132,6 +146,7 @@ const Flex = styled('div')(
     display: 'flex',
     position: 'relative',
   },
+  position,
   display,
   space,
   width,
@@ -165,6 +180,7 @@ export const Text = styled('div')(
   {
     margin: 0
   },
+  position,
   display,
   space,
   fontSize,

@@ -19,6 +19,7 @@ import * as CssUtils from 'ProjStyles/cssUtils';
 // import CarRole from 'pages/CarRole'
 // import InformationSrc from 'pages/InformationSrc'
 import Home from 'pages/Home'
+import PhoneDetails from 'pages/PhoneDetails'
 
 //import DemographicDataNew from 'pages/DemographicDataNew'
 
@@ -38,6 +39,7 @@ const Main = ({theme, ...rProps}) => {
 
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path='/phone/:number' component={PhoneDetails}/>
         </Switch>
     </Bs.Flex>
   )

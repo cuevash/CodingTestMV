@@ -1,5 +1,6 @@
 // REACT
 import React, { Component } from 'react';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 // STYLES 
@@ -20,44 +21,29 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
+import phoneDat from 'mock/phoneDat'
+
 class PhoneDetailComponent extends Component {
 
   componentDidUpdate(prevProps) {
   }
 
   render() {
-    const { phoneList, theme, ...rProps } = this.props
+    const { phoneDat, theme, ...rProps } = this.props
 
-    return <Bs.Box f="medium" px={["5%", "10%"]}>
-      {/* Phones */}
-      <Bs.Flex 
-        flexWrap='wrap'
-        justify="center" >
+    return (
+      <Bs.Box f="medium" px={["5%", "10%"]}>
+        {/* Phone */}
 
-        {phoneList.map(phone => (
-          <Bs.Box
-            f='medium'
-            my='0.5em'
-            mx='0.5em'
-            position>
-            <Bs.LinkReactR to={`/phone/${phone.id}`}>
-              <SimpleMediaCardStyled dat={phone} />
-            </Bs.LinkReactR>
+        <Bs.Box
+          f='medium'
+          py='0.5em'
+          px='0.5em'>
+            <SimpleMediaCardStyled dat={phoneDat} />
+        </Bs.Box>
 
-            {/* Hover color */}
-            {/* <Bs.BoxAbs
-              css={{
-                '&:hover': {
-                  backgroundColor: theme.colors.purpleLight
-                }
-              }}
-            /> */}
-          </Bs.Box>
-        ))}
-
-      </Bs.Flex>
-
-    </Bs.Box>;
+      </Bs.Box>
+    )
   }
 }
 
