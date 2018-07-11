@@ -50,7 +50,7 @@ export const phoneListFetched = (resp) => ({
 
 // Reducers
 
-const Status = {
+export const Status = {
   LOADING: 'loading',
   LOADED: 'loaded',
   ERROR: 'error'

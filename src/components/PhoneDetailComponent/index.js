@@ -30,9 +30,7 @@ class PhoneDetailComponent extends Component {
   }
 
   render() {
-    const { phoneList, phoneDat, theme, ...rProps } = this.props
-
-    console.log("PhoneListlll", phoneList)
+    const { phoneListDat, phoneDat, theme, ...rProps } = this.props
 
     return (
     <Bs.Box f="medium" px={["5%", "5%", "5%", "5%"]}>
@@ -120,12 +118,12 @@ const Details = (props) => (
 
 const SimpleMediaCardStyled =  withStyles(styles)(SimpleMediaCard);
 
-
-const mapStateToProps = state => ({ ...state });
+const mapStateToProps = (state) => ({
+  phoneListDat: state.phoneList
+})
 
 const PhoneDetailComponentRdxContd = connect(
-  mapStateToProps
+mapStateToProps
 )(PhoneDetailComponent);
-
 
 export default  withTheme( PhoneDetailComponentRdxContd )

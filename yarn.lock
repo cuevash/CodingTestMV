@@ -2392,7 +2392,7 @@ emotion-theming@^9.2.5:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-emotion@^9.2.5:
+emotion@^9.1.1, emotion@^9.2.5:
   version "9.2.5"
   resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.2.5.tgz#666fb151a69c25c7582ff3de06f60f8d848f74aa"
   dependencies:
@@ -6001,7 +6001,7 @@ react-dom@^16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-emotion@^9.2.5:
+react-emotion@^9.1.1, react-emotion@^9.2.5:
   version "9.2.5"
   resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.2.5.tgz#0e40edf062d7eea260d4327a9fe27288ec83835e"
   dependencies:
@@ -6095,6 +6095,15 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
+react-spinners@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.3.2.tgz#faf2ecfdd54b887fa3728bd15e48840b938c7736"
+  dependencies:
+    emotion "^9.1.1"
+    prop-types "^15.5.10"
+    react-emotion "^9.1.1"
+    recompose "0.26.0"
+
 react-transition-group@^2.2.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.4.0.tgz#1d9391fabfd82e016f26fabd1eec329dbd922b5a"
@@ -6182,6 +6191,15 @@ rebass@^2.0.1:
     prop-types "^15.6.0"
     styled-system "^2.3.1"
     system-components "^2.2.1"
+
+recompose@0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.26.0.tgz#9babff039cb72ba5bd17366d55d7232fbdfb2d30"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^2.3.1"
+    symbol-observable "^1.0.4"
 
 "recompose@^0.26.0 || ^0.27.0", recompose@^0.27.0, recompose@^0.27.1:
   version "0.27.1"

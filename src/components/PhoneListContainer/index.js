@@ -12,6 +12,8 @@ import * as CssUtils from 'ProjStyles/cssUtils';
 
 // ALL
 import { withStyles } from '@material-ui/core/styles'
+import Spinner from 'components/Spinner'
+import { Status } from 'rdx/phoneList'
 
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
@@ -34,6 +36,21 @@ class PhoneListContainer extends Component {
     const { phoneListDat, phoneList, theme, ...rProps } = this.props
 
     console.log("PhoneListlll", phoneListDat)
+
+    if(phoneListDat.status === Status.LOADING) {
+      // Loading
+      return <Spinner/>
+    }
+
+    if(phoneListDat.status !== Status.LOADED) {
+      // Err
+      return (
+        <Bs.Text
+          f='medium'>
+          {`Error: ${phoneListDat.errorTxt}`}
+        </Bs.Text>
+      )
+    }
 
     return <Bs.Box f="medium" px={["5%", "5%", "5%", "5%"]}>
       {/* Phones */}
@@ -138,20 +155,12 @@ const Details = (props) => (
 
 const SimpleMediaCardStyled =  withStyles(styles)(SimpleMediaCard);
 
-const mapStateToProps = (state) => {
-  
-  console.log("satatetete", state )
-
-  return {
+const mapStateToProps = (state) => ({
     phoneListDat: state.phoneList
-}
-
-}
-
+})
 
 const PhoneListContainerRdxContd = connect(
   mapStateToProps
 )(PhoneListContainer);
-
 
 export default  withTheme( PhoneListContainerRdxContd )
