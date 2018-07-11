@@ -4,7 +4,7 @@ const DataPhones = [
     id: '1',
     title: 'Samsung S6',
     description: 'Mobile from samsung, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/samsung_s6.jpeg',
+    imageUrl: 'http://localhost:5000/media/samsung_s6.jpeg',
     color: 'white',
     price: 200,
     priceUnit: 'euro'
@@ -13,7 +13,7 @@ const DataPhones = [
     id: '2',
     title: 'Iphone 7',
     description: 'Mobile from Apple, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/Iphone7.jpg',
+    imageUrl: 'http://localhost:5000/media/Iphone7.jpg',
     color: 'white',
     price: 300,
     priceUnit: 'euro'
@@ -22,7 +22,7 @@ const DataPhones = [
     id: '3',
     title: 'Samsung S6',
     description: 'Mobile from samsung, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/samsung_s6.jpeg',
+    imageUrl: 'http://localhost:5000/media/samsung_s6.jpeg',
     color: 'white',
     price: 200,
     priceUnit: 'euro'
@@ -31,7 +31,7 @@ const DataPhones = [
     id: '4',
     title: 'Iphone 7',
     description: 'Mobile from Apple, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/Iphone7.jpg',
+    imageUrl: 'http://localhost:5000/media/Iphone7.jpg',
     color: 'white',
     price: 300,
     priceUnit: 'euro'
@@ -40,7 +40,7 @@ const DataPhones = [
     id: '5',
     title: 'Samsung S6',
     description: 'Mobile from samsung, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/samsung_s6.jpeg',
+    imageUrl: 'http://localhost:5000/media/samsung_s6.jpeg',
     color: 'white',
     price: 200,
     priceUnit: 'euro'
@@ -49,7 +49,7 @@ const DataPhones = [
     id: '6',
     title: 'Iphone 7',
     description: 'Mobile from Apple, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/Iphone7.jpg',
+    imageUrl: 'http://localhost:5000/media/Iphone7.jpg',
     color: 'white',
     price: 300,
     priceUnit: 'euro'
@@ -58,7 +58,7 @@ const DataPhones = [
     id: '7',
     title: 'Samsung S6',
     description: 'Mobile from samsung, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/samsung_s6.jpeg',
+    imageUrl: 'http://localhost:5000/media/samsung_s6.jpeg',
     color: 'white',
     price: 200,
     priceUnit: 'euro'
@@ -67,7 +67,7 @@ const DataPhones = [
     id: '8',
     title: 'Iphone 7',
     description: 'Mobile from Apple, light, excellent camera, long batery',
-    url: 'http://localhost:5000/media/Iphone7.jpg',
+    imageUrl: 'http://localhost:5000/media/Iphone7.jpg',
     color: 'white',
     price: 300,
     priceUnit: 'euro'

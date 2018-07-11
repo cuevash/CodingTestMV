@@ -3,6 +3,16 @@ import { combineEpics } from 'redux-observable';
 
 import Rx from "rxjs/Rx";
 
+
+// import { Observable } from 'rxjs';
+// import 'rxjs/add/operator/switchMap';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/observable/of';
+// import 'rxjs/add/operator/catch';
+// import { ajax } from 'rxjs/observable/dom/ajax';
+
+// Rx.Observable.ajax
+
 // import { DataFrame as DataFrame } from 'dataframe-js';
 // import { getPublicUrl, getHostName, getOrigin } from 'util/url-utils'
 
@@ -43,18 +53,16 @@ export const phoneList = ( state = {}, action ) => {
   switch (action.type) {
     case Actions.PHONE_LIST_FETCH:
       return {
-        status: Status.loading,
-        rawDat: null,
+        status: Status.LOADING,
         errorTxt: null,
         dat: null
       }
     case Actions.SURVEY_DATA_FETCHED:
       return Object.assign({}, state, 
         { 
-          status: Status.loading,
-          rawDat: action.payload,
-          errorTxt: null,
-          dat: action.payload
+          status: action.status,
+          errorTxt: action.errorTxt,
+          dat: action.dat
         })
     default:
       return state;
@@ -63,13 +71,36 @@ export const phoneList = ( state = {}, action ) => {
 
 // Epics
 
-export const phoneListFetchingEpic = action$ =>
-  action$.ofType(Actions.PHONE_LIST_FETCH)
-    .mergeMap(action =>
-     // Rx.Observable.fromPromise(DataFrame.fromDSV(`${getOrigin()}${dataFile}`, ';', true))
-     Rx.Observable.fromPromise( promiseFromPapaParse( dataFile ) )
-        .map(response => surveyDataFetched( response ) )
-    );
+const apiPoint = process.env.REACT_APP_SECRET_CODE + '/phones'
+
+export const phoneListFetchingEpic = action$ => {
+  // action$.ofType is the outer Observable
+  return action$
+    .ofType(Actions.PHONE_LIST_FETCH)
+    .switchMap(() => {
+      return Rx.Observable.ajax
+        .getJSON(apiPoint)
+        .map(data => data.results)
+        .map(phones => phones.map(phone => ({
+          id: phone.id,
+          title: phone.title,
+          imageUrl: whisky.img_url
+        })))
+    })
+    .map(phones => phoneListFetched({
+      status: Status.LOADED,
+      errorTxt: null,
+      dat: phones
+    }))
+    .catch(error => Rx.of(
+      phoneListFetched({
+        status: Status.ERROR,
+        errorTxt: error.message,
+        dat: null
+      })
+    ))
+}
+
 
 // export { actionIds, actions, rootEpic, rootReducer, flags, surveyData }
 
