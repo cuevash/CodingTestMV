@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux'
 import { combineEpics } from 'redux-observable';
-import promiseFromPapaParse from 'util/promiseFromPapaParse'
 
 import Rx from "rxjs/Rx";
-
 
 // import { DataFrame as DataFrame } from 'dataframe-js';
 // import { getPublicUrl, getHostName, getOrigin } from 'util/url-utils'
@@ -28,95 +26,50 @@ const phoneListFetch = () => ({
    payload: '' 
   });
 
-const phoneListFetched = (dat) => ({
+const phoneListFetched = (resp) => ({
    type: Actions.PHONE_LIST_FETCHED,
-   payload: dat 
+   payload: resp 
   });
 
+// Reducers
 
-/*
- * ACTION IDS
- */
-const UPDATE_FLAGS = 'UPDATE_FLAGS'
-
-const actionIds = {
-  UPDATE_FLAGS
+const Status = {
+  LOADING: 'loading',
+  LOADED: 'loaded',
+  ERROR: 'error'
 }
 
-/*
- * ACTION CREATORS
- */
-
-
-/*
- * REDUCERS
- */
-
-const flags = ( state = null, action ) => {
+export const phoneList = ( state = {}, action ) => {
   switch (action.type) {
-    case UPDATE_FLAGS:
-      return action.flags
-    default:
-      return state
-  }
-}
-
-/*
- * EPICS
- */
-
-const SURVEY_DATA_FETCHING = 'SURVEY_DATA_FETCHING';
-const SURVEY_DATA_FETCHED = 'SURVEY_DATA_FETCHED';
-
-const surveyDataFetching = () => ({ type: SURVEY_DATA_FETCHING, payload: '' });
-const surveyDataFetched = (surveyDat) => ({ type: SURVEY_DATA_FETCHED, payload: surveyDat });
-
-const surveyDataFetchingEpic = action$ =>
-  action$.ofType(SURVEY_DATA_FETCHING)
-    .mergeMap(action =>
-     // Rx.Observable.fromPromise(DataFrame.fromDSV(`${getOrigin()}${dataFile}`, ';', true))
-     Rx.Observable.fromPromise( promiseFromPapaParse( dataFile ) )
-        .map(response => surveyDataFetched( response ) )
-    );
-
-const surveyData = ( state = {}, action) => {
-  switch (action.type) {
-    case SURVEY_DATA_FETCHING:
+    case Actions.PHONE_LIST_FETCH:
       return {
-        loading: true,
-        loaded: false,
-        dat: null,
-        error: null,
-        db: null
+        status: Status.loading,
+        rawDat: null,
+        errorTxt: null,
+        dat: null
       }
-    case SURVEY_DATA_FETCHED:
+    case Actions.SURVEY_DATA_FETCHED:
       return Object.assign({}, state, 
         { 
-          loading:false, 
-          loaded: true,
-          dat: action.payload, 
-          error: false,
-          db: createDb( action.payload )
+          status: Status.loading,
+          rawDat: action.payload,
+          errorTxt: null,
+          dat: action.payload
         })
     default:
       return state;
   }
 };
 
+// Epics
 
-const rootReducer = combineReducers({
-  flags,
- // surveyData
-})
+export const phoneListFetchingEpic = action$ =>
+  action$.ofType(Actions.PHONE_LIST_FETCH)
+    .mergeMap(action =>
+     // Rx.Observable.fromPromise(DataFrame.fromDSV(`${getOrigin()}${dataFile}`, ';', true))
+     Rx.Observable.fromPromise( promiseFromPapaParse( dataFile ) )
+        .map(response => surveyDataFetched( response ) )
+    );
 
-const rootEpic = combineEpics(
-  surveyDataFetchingEpic
-);
-
-const actions = {
-  surveyDataFetching,
-  surveyDataFetched
-}
-
-export { actionIds, actions, rootEpic, rootReducer, flags, surveyData }
+// export { actionIds, actions, rootEpic, rootReducer, flags, surveyData }
 
