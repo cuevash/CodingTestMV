@@ -27,6 +27,10 @@ const Home = ({ theme, ...props }) => {
       {/* Space - Top */}
       <Bs.Box f='medium' py='1em'/>       
 
+      <Ps.Title1>
+        Phone Repertoire
+      </Ps.Title1>
+
       <SectionHome/>
 
       {/* Space - Bottom */}

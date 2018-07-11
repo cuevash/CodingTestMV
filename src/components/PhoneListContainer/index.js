@@ -71,15 +71,15 @@ const SimpleMediaCard = (props) => {
           title={dat.title}
         />
         <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
+          <Typography gutterBottom variant="headline" component='h2'>
             {dat.title}
           </Typography>
-          <Typography component="p">
+          <Typography component='p'>
            {dat.description}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" >
             Details
           </Button>
         </CardActions>
@@ -91,6 +91,28 @@ const SimpleMediaCard = (props) => {
 SimpleMediaCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+const Title = (props) => (
+  <Bs.Box
+    f={['small', 'medium']}>
+    {props.children}
+  </Bs.Box>
+)
+
+const Desc = (props) => (
+  <Bs.Box
+    f={['small', 'medium']}>
+    {props.children}
+  </Bs.Box>
+)
+
+const Details = (props) => (
+  <Bs.Box
+    f={['small', 'medium']}>
+    {props.children}
+  </Bs.Box>
+)
+
 
 const SimpleMediaCardStyled =  withStyles(styles)(SimpleMediaCard);
 
