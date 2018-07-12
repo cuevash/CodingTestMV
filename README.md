@@ -8,7 +8,7 @@
   * Clone the repository 
   
 ### Run server & FrontEnd
-  Once you have cloned the repository, change to the repository directory and follow the instructions.
+  Once you have cloned the repository, change to the repository's directory and follow the instructions.
 
   * Run the REST server
   `````
@@ -16,22 +16,22 @@
     yarn runServer
   `````  
 
-  * Build the client
+  * Build the client (From the repository's root directory)
   `````
     yarn build
   `````  
 
-   * Run the client
-   Install, at least locally the package server to run a local server for the 
+   * Run the client (From the repository's root directory)
+   Install the 'serve' package locally. It allows to run a web server locally
   `````
     yarn add serve --dev
   `````   
-  And run a local server with to serve the built app
+  And run a local server to serve the built app
 
   `````
     yarn serve -s build
   `````   
 
-  Follow the instrucctions of the command's output on the console to open a browser with the right address.
+  Follow the instrucctions of the command's output on the console to open a browser with the right address. Should be something like: **http://localhost:5000**
 
 ### Notes
