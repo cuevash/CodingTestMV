@@ -10,6 +10,12 @@
 ### Run server & FrontEnd
   Once you have cloned the repository, change to the repository's directory and follow the instructions.
 
+  * Install the REST server
+  `````
+    cd server
+    yarn
+  `````  
+
   * Run the REST server
   `````
     cd server
@@ -18,6 +24,7 @@
 
   * Build the client (From the repository's root directory)
   `````
+    yarn
     yarn build
   `````  
 
