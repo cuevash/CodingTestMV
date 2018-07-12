@@ -1,14 +1,9 @@
 // REACT
-import React, { Component } from 'react'
+import React from 'react'
 
 // STYLES 
 import { withTheme } from 'emotion-theming';
-import styled, { css } from 'react-emotion'
-import * as Ps from 'ProjStyles/'
 import * as Bs from 'styles/base';
-import * as Rb from 'rebass';
-import * as CssUtils from 'ProjStyles/cssUtils';
-
 
 const Footer = ({theme, ...rProps}) => {
 
@@ -26,11 +21,13 @@ const Footer = ({theme, ...rProps}) => {
         <Bs.Box
           f={['small', 'medium']}
           fontWeight='100'>
+
           <Bs.Text
             display='inline'
             color={theme.colors.white}>
             Acme React services, copyright © 2018
           </Bs.Text>
+          
         </Bs.Box>
 
       </Bs.Flex>

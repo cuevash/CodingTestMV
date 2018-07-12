@@ -269,14 +269,15 @@ const Link = styled('a')(
 )
 
 export const LinkReactR = styled(Lnk)(
+  (props) => ({
+    display: 'block',
+    textDecoration: 'none'
+  }),
   space,
   width,
   color,
   order,
-  (props) => ({
-    display: 'block',
-    textDecoration: 'none'
-  })
+  display
 )
 
 

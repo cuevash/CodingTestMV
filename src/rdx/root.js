@@ -3,8 +3,6 @@ import { combineReducers } from 'redux';
 
 import { phoneList, phoneListFetchingEpic } from 'rdx/phoneList';
 
-console.log("hhhhhhh", phoneListFetchingEpic)
-
 export const rootEpic = combineEpics(
   phoneListFetchingEpic
 );

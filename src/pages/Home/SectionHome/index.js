@@ -1,20 +1,13 @@
 // REACT
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
 
 // STYLES
 import { withTheme } from "emotion-theming";
-import styled, { css } from "react-emotion";
-import * as Ps from "ProjStyles/";
 import * as Bs from "styles/base";
-import * as CssUtils from "ProjStyles/cssUtils";
-import * as chroma from "chroma-js";
-
-// COMPONENTS
-import PhoneListContainer from 'components/PhoneListContainer'
 
 // ALL
+import PhoneListContainer from 'components/PhoneListContainer'
 import Spinner from 'components/Spinner'
 import { Status } from 'rdx/phoneList'
 

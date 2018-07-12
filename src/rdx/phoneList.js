@@ -1,6 +1,3 @@
-import { combineReducers } from 'redux'
-import { combineEpics } from 'redux-observable';
-
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
@@ -8,20 +5,6 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import { ajax } from 'rxjs/observable/dom/ajax';
 
-
-// import { Observable } from 'rxjs';
-// import 'rxjs/add/operator/switchMap';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/observable/of';
-// import 'rxjs/add/operator/catch';
-// import { ajax } from 'rxjs/observable/dom/ajax';
-
-// Rx.Observable.ajax
-
-// import { DataFrame as DataFrame } from 'dataframe-js';
-// import { getPublicUrl, getHostName, getOrigin } from 'util/url-utils'
-
-// LIBS
 import * as R from 'ramda'
 
 // Actions
@@ -35,8 +18,6 @@ const Actions = ActionsNames.reduce(
   ),
   {} 
 )
-
-console.log("namesss", Actions)
 
 export const phoneListFetch = () => ({
    type: Actions.FETCH, 
@@ -103,12 +84,4 @@ export const phoneListFetchingEpic = action$ => {
       })
     ))
 }
-
-export const phoneListFetchingEpic3 = action$ => {
-  // action$.ofType is the outer Observable
-  return action$
-}
-
-
-// export { actionIds, actions, rootEpic, rootReducer, flags, surveyData }
 

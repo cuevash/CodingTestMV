@@ -1,5 +1,7 @@
 import { injectGlobal } from 'emotion'
 
+// Fluid/Liquid layout with breakpoints
+
 injectGlobal`
   * {
     box-sizing: border-box;

@@ -1,18 +1,4 @@
-/*
-################
-              Breakpoints: 40, 52, 64 ems where 1ems = 16px
-################
-*/
-  
-
-
-/*
-################
-      If you modified this, then you need to update the util calc methods 
-      in ProjStyles/index.js using factor 0.833 -  (0.833 * 16px) = 13.328px
-################
-*/
-
+/* */
 
 
 

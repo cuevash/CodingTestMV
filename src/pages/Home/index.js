@@ -1,19 +1,15 @@
 // REACT
 import React from 'react'
-import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 // STYLES 
 import { withTheme } from 'emotion-theming';
-import styled, { css } from 'react-emotion'
 import * as Ps from 'ProjStyles/'
 import * as Bs from 'styles/base';
-import * as CssUtils from 'ProjStyles/cssUtils';
 
 // ALL
 import PageStd from 'pages/PageStd'
 import SectionHome from './SectionHome'
-
 import {Helmet} from "react-helmet";
 
 const Home = ({ theme, ...props }) => {

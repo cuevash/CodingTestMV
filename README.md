@@ -1,25 +1,37 @@
-# MasmovilCode
+# Masmovil Code
 
-## Client-server test code 
-  * This a test of a client - server code. The client request a list of phobes at a given endpoint of the server. The server return a mock-up list of phones. 
-  * The client shows the list of the phones and allows to go into the details of each of the phones.
+## Description
+  This is a simple project that demonstrates the use of a simple server with a single endpoint and small react app to show the list of results.
   
-### Server
-  * The small REST server is implemented with Express (Server framework on top of Node.js).
+### How to install
+  * Install node.js
+  * Clone the repository 
   
-  #### Starting the server
-  * To run the server use 
-  ````
-    yarn start-server 
-  ````
+### Run server & FrontEnd
+  Once you have cloned the repository, change to the repository directory and follow the instructions.
 
-### Client
-  * Main features of the react client
-    - Using 'emotion' lib to handle CSS in JS.
-    - Liquid sizes. Most of the sizes of the typografy, margins and ratios are related to the with of the window. So it adapts in a very smooth way. It is combined with breakpoints to change the app sizes.
-  
-  #### Starting the server
-  * To run the server use 
-  ````
-    yarn start-server 
-  ````  
+  * Run the REST server
+  `````
+    cd server
+    yarn runServer
+  `````  
+
+  * Build the client
+  `````
+    yarn build
+  `````  
+
+   * Run the client
+   Install, at least locally the package server to run a local server for the 
+  `````
+    yarn add serve --dev
+  `````   
+  And run a local server with to serve the built app
+
+  `````
+    yarn serve -s build
+  `````   
+
+  Follow the instrucctions of the command's output on the console to open a browser with the right address.
+
+### Notes

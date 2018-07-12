@@ -28,7 +28,6 @@ app.get('/api/phones', (req, res) => {
 
 // Single element
 app.get('/api/phones/:id', (req, res) => {
-  console.log('Parms', req.params)
 
   // Find element
   let phone = DataPhones.find((ele) => ele.id === req.params.id)

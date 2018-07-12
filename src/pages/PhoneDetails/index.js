@@ -1,25 +1,19 @@
 // REACT
 import React from 'react'
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 // STYLES 
 import { withTheme } from 'emotion-theming';
-import styled, { css } from 'react-emotion'
 import * as Ps from 'ProjStyles/'
 import * as Bs from 'styles/base';
-import * as CssUtils from 'ProjStyles/cssUtils';
 
 // ALL
 import { Status } from 'rdx/phoneList'
 import Spinner from 'components/Spinner'
 import PageStd from 'pages/PageStd'
 import PhoneDetailComponent from 'components/PhoneDetailComponent'
-
-import phoneDat from 'mock/phoneDat'
-
 import {Helmet} from "react-helmet";
-import { throwError } from 'rxjs';
 
 const PhoneDetails = ({ theme, phoneListDat, ...props }) => {
 
@@ -28,6 +22,7 @@ const PhoneDetails = ({ theme, phoneListDat, ...props }) => {
   let Comp = null
 
   switch (phoneListDat.status) {
+    
     case Status.LOADING:
       Comp = Spinner
       break;

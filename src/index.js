@@ -1,9 +1,6 @@
 // This file is a css reset and needs to be imported before 'index.css'
 import './globalCss'
-
-// import 'minireset.css/minireset.css'
 import './index.css';
-
 import './global.css'
 
 import React from 'react';
