@@ -72,11 +72,12 @@ class PhoneListContainer extends Component {
 
 const styles = {
   card: {
-    // maxWidth: 250,
+    maxWidth: 400,
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '80%', // 9:16
+    backgroundSize: 'contain',
   },
 };
 

@@ -178,6 +178,33 @@ const Flex = styled('div')(
 
 export const Text = styled('div')(
   {
+    margin: 0,
+    lineHeight: '1.4em'
+  },
+  position,
+  display,
+  space,
+  fontSize,
+  color,
+  textAlign,
+  fontWeight,
+  lineHeight,
+  fontFamily, 
+  order,
+  borderColor,
+  borderWidth,  
+  borderTop,
+  borderBottom ,
+  borderLeft,
+  maxWidth,
+  minWidth,
+  maxHeight,
+  width,
+  height
+)
+
+export const Span = styled('Span')(
+  {
     margin: 0
   },
   position,
@@ -201,6 +228,7 @@ export const Text = styled('div')(
   width,
   height
 )
+
 
 const Button = styled(Box)(
 )
